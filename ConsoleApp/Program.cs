@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Collections;
 
 namespace ConsoleApp
 {
@@ -17,9 +17,12 @@ namespace ConsoleApp
 
             //Valid Parentheses
             string str1 = "({{}})";
-            if(IsValid(str1))
+            if (IsValid(str1))
                 Console.WriteLine("RIGHT!");
             else Console.WriteLine("ERROR!");
+
+            //Remove Element
+
 
             Console.ReadLine();
         }
@@ -69,6 +72,28 @@ namespace ConsoleApp
                 else stack.Push(ch);
             }
             return stack.Count > 0 ? false : true;
+        }
+
+        //Remove Duplicates from Sorted Array
+        static int RemoveDuplicates(int[] nums)
+        {
+            int count = 0;
+            for (int i = 0; i < nums.Length-1; i++)
+            {
+                if (nums[i] != nums[i + 1])
+                {
+                    nums[count] = nums[i];
+                    count++;
+                }
+            }
+            nums[count++] = nums[nums.Length - 1];
+            return count;
+        }
+
+        //Remove Element
+        static int RemoveElement(int[] nums, int val)
+        {
+            return 0;
         }
     }
 }
