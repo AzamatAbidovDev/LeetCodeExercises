@@ -22,8 +22,14 @@ namespace ConsoleApp
             else Console.WriteLine("ERROR!");
 
             //Remove Element
+            int[] nums = new int[] { 3,2,2,3 };
+            int number = RemoveElement(nums, 3);
+            Console.WriteLine(number);
 
-
+            for (int i = 0; i < nums.Length; i++)
+            {
+                Console.Write(nums[i]);
+            }
             Console.ReadLine();
         }
 
@@ -93,7 +99,16 @@ namespace ConsoleApp
         //Remove Element
         static int RemoveElement(int[] nums, int val)
         {
-            return 0;
+            int count = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] != val)
+                {
+                    nums[count] = nums[i];
+                    count++;
+                }
+            }           
+            return count;
         }
     }
 }

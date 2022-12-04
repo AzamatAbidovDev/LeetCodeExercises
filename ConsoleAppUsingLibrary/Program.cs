@@ -35,6 +35,11 @@ namespace ConsoleAppUsingLibrary
 
             Console.WriteLine("Result = " + a);
 
+            //Search Insert Position
+            int[] nums = new int[] { 1,3,5,6,8 };
+            int index1 = SearchInsert(nums, 7);
+            Console.WriteLine(index1);
+
             Console.ReadLine();
         }
 
@@ -104,6 +109,25 @@ namespace ConsoleAppUsingLibrary
                 }
             }
             return number;
+        }
+        //Search Insert Position
+        static int SearchInsert(int[] nums, int target)
+        {
+            int index = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if(nums[i] == target)
+                {
+                    return i;
+                }
+                else if (target < nums[i])
+                {
+                    return i;
+                }
+
+                index = i;
+            }         
+            return index+1;
         }
     }
 }
