@@ -22,14 +22,24 @@ namespace ConsoleApp
             else Console.WriteLine("ERROR!");
 
             //Remove Element
-            int[] nums = new int[] { 3,2,2,3 };
+            int[] nums = new int[] { 3, 2, 2, 3 };
             int number = RemoveElement(nums, 3);
             Console.WriteLine(number);
-
             for (int i = 0; i < nums.Length; i++)
             {
                 Console.Write(nums[i]);
             }
+            Console.WriteLine();
+
+            //Plus One
+            int[] nums2 = new int[] { 4,3,9,9};
+            nums2 = PlusOne(nums2);
+            for (int i = 0; i < nums2.Length; i++)
+            {
+                Console.Write(nums2[i]);
+            }
+            Console.WriteLine();
+
             Console.ReadLine();
         }
 
@@ -109,6 +119,43 @@ namespace ConsoleApp
                 }
             }           
             return count;
+        }
+
+        //Plus One
+        static int[] PlusOne(int[] digits)
+        {
+            List<int> nums = new List<int>();
+            bool isNine = false;
+            int last = digits.Length - 1;
+
+            if (digits[last] == 9)
+            {
+                nums.Add(0);
+                isNine = true;
+            }
+            else nums.Add(digits[last] + 1);
+
+            for (int i = last - 1; i >= 0; i--)
+            {
+                if (isNine)
+                {
+                    if (digits[i] == 9)
+                        nums.Add(0);
+                    else
+                    {
+                        nums.Add(digits[i] + 1);
+                        isNine = false;
+                    }
+                }
+                else nums.Add(digits[i]);              
+            }
+
+            if (isNine)
+                nums.Add(1);
+
+            var res = nums.ToArray();
+            Array.Reverse(res);
+            return res;
         }
     }
 }

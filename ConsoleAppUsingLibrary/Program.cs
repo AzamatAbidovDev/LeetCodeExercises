@@ -36,9 +36,14 @@ namespace ConsoleAppUsingLibrary
             Console.WriteLine("Result = " + a);
 
             //Search Insert Position
-            int[] nums = new int[] { 1,3,5,6,8 };
+            int[] nums = new int[] { 1, 3, 5, 6, 8 };
             int index1 = SearchInsert(nums, 7);
             Console.WriteLine(index1);
+
+            //Length of Last Word
+            string str = "Length of last word";
+            int length = LengthOfLastWord(str);
+            Console.WriteLine(length);
 
             Console.ReadLine();
         }
@@ -128,6 +133,12 @@ namespace ConsoleAppUsingLibrary
                 index = i;
             }         
             return index+1;
+        }
+        //Length of Last Word
+        static int LengthOfLastWord(string s)
+        {
+            string str = s.Split(' ').Last(x=>x.Length != 0);                    
+            return str.Length;       
         }
     }
 }
