@@ -15,22 +15,6 @@ namespace ConsoleApp
             string str = LongestCommonPrefix(words);
             Console.WriteLine(str);
 
-            //Valid Parentheses
-            string str1 = "({{}})";
-            if (IsValid(str1))
-                Console.WriteLine("RIGHT!");
-            else Console.WriteLine("ERROR!");
-
-            //Remove Element
-            int[] nums = new int[] { 3, 2, 2, 3 };
-            int number = RemoveElement(nums, 3);
-            Console.WriteLine(number);
-            for (int i = 0; i < nums.Length; i++)
-            {
-                Console.Write(nums[i]);
-            }
-            Console.WriteLine();
-
             //Plus One
             int[] nums2 = new int[] { 4,3,9,9};
             nums2 = PlusOne(nums2);

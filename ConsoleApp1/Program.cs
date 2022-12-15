@@ -13,10 +13,6 @@ namespace ConsoleApp1
             int maxVal = MaximumValue(text);
             Console.WriteLine(maxVal);
 
-            //Climbing Stairs
-            maxVal = ClimbStairs(5);
-            Console.WriteLine(maxVal);
-
             //Merge Sorted Array
             int[] numbers1 = new int[5] { 1,3,2,0,0};
             int[] numbers2 = new int[2] { 6,4};
@@ -92,6 +88,20 @@ namespace ConsoleApp1
                 }
             }
             Array.Sort(nums1);
+        }
+
+        //Intersection of Two Arrays II
+        static int[] Intersect(int[] nums1, int[] nums2)
+        {
+            //List<int> nums = new List<int>();
+            //for (int i = 0; i < nums1.Length; i++)
+            //{
+            //    if(nums2.Contains(nums1[i]))
+            //    {
+
+            //    }
+            //}
+            return nums1;
         }
     }
 }
