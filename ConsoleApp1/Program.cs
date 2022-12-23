@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -15,7 +16,7 @@ namespace ConsoleApp1
 
             //Merge Sorted Array
             int[] numbers1 = new int[5] { 1,1,1,4,6};
-            int[] numbers2 = new int[5] { 1,3,2,2,5};
+            int[] numbers2 = new int[5] { 1,1,2,2,5};
             int[] nums = Intersect(numbers1, numbers2);
             for (int i = 0; i < nums.Length; i++)
             {
@@ -124,10 +125,47 @@ namespace ConsoleApp1
             return nums.ToArray();
         }
 
-        //Integer to Roman
-        static string IntToRoman(int num)
-        {
-            return "";
-        }
+        //3Sum
+        //static IList<IList<int>> ThreeSum(int[] nums)
+        //{
+        //    List<int> nums1 = new List<int>(); 
+        //    List<IList<int>> numbers = new List<IList<int>>();
+        //    for (int j = 0; j < nums.Length; j++)
+        //    {
+        //        for (int i = 1; i < nums.Length; i++)
+        //        {
+        //            for (int k = 2; k < nums.Length; k++)
+        //            {
+        //                if(j!=i && j!=k && i!=k)
+        //                {
+        //                    if (nums[i] + nums[j] + nums[k] == 0)
+        //                    {
+        //                        nums1.Add(nums[j]);
+        //                        nums1.Add(nums[i]);
+        //                        nums1.Add(nums[k]);
+        //                        nums1.Sort();
+        //                        if (numbers.Count > 0)
+        //                        {
+        //                            for (int n = 0; n < numbers.Count; n++)
+        //                            {
+        //                                if(numbers[n].SequenceEqual(nums1))
+        //                                {
+        //                                    numbers[n] = nums1;
+        //                                    nums1 = new List<int>();
+        //                                }
+        //                            }
+        //                        }
+        //                        if(numbers.Count == 0 || nums1.Count != 0)
+        //                        {
+        //                            numbers.Add(nums1);
+        //                            nums1 = new List<int>();
+        //                        }                              
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }           
+        //    return numbers;
+        //}
     }
 }
